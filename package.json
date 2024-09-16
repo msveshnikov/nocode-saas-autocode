@@ -11,20 +11,21 @@
         "format": "prettier --write ."
     },
     "dependencies": {
-        "react": "^18.0.2",
-        "react-dom": "^18.0.2",
-        "react-scripts": "5.0.1",
         "@emotion/react": "^11.13.3",
         "@emotion/styled": "^11.13.0",
         "@mui/icons-material": "^6.0.2",
         "@mui/material": "^6.0.2",
         "@mui/x-date-pickers": "^7.16.0",
-        "socket.io": "^4.2.0",
         "axios": "^0.21.1",
+        "i18next": "^20.3.5",
+        "react": "^18.0.2",
         "react-dnd": "^14.0.2",
         "react-dnd-html5-backend": "^14.0.0",
-        "i18next": "^20.3.5",
-        "react-i18next": "^11.11.4"
+        "react-dom": "^18.0.2",
+        "react-i18next": "^11.11.4",
+        "react-router-dom": "^6.26.2",
+        "react-scripts": "5.0.1",
+        "socket.io": "^4.2.0"
     },
     "devDependencies": {
         "@babel/plugin-proposal-private-property-in-object": "^7.21.11",

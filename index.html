@@ -1,296 +1,319 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>NoCode Startup SaaS - Build Your SaaS Without Code</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #3498db;
-            --secondary-color: #2c3e50;
-            --accent-color: #e74c3c;
-            --text-color: #333;
-            --light-bg: #f9f9f9;
-        }
-        body {
-            font-family: 'Roboto', sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        header {
-            background-color: var(--secondary-color);
-            color: #fff;
-            padding: 20px 0;
-            position: fixed;
-            width: 100%;
-            z-index: 1000;
-        }
-        nav {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        nav ul {
-            list-style-type: none;
-            display: flex;
-        }
-        nav ul li {
-            margin-left: 20px;
-        }
-        nav ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: color 0.3s;
-        }
-        nav ul li a:hover {
-            color: var(--primary-color);
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-            text-align: center;
-            padding: 150px 0 100px;
-        }
-        .hero h1 {
-            font-size: 3.5em;
-            margin-bottom: 20px;
-            animation: fadeInUp 1s ease-out;
-        }
-        .hero p {
-            font-size: 1.2em;
-            max-width: 600px;
-            margin: 0 auto 30px;
-            animation: fadeInUp 1s ease-out 0.5s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: var(--accent-color);
-            color: #fff;
-            padding: 15px 40px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: bold;
-            transition: all 0.3s;
-            animation: fadeInUp 1s ease-out 1s;
-            opacity: 0;
-            animation-fill-mode: forwards;
-        }
-        .cta-button:hover {
-            background-color: #c0392b;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
-        }
-        .features {
-            padding: 100px 0;
-            background-color: var(--light-bg);
-        }
-        .features h2 {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 2.5em;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-        }
-        .feature-item {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .feature-item:hover {
-            transform: translateY(-10px);
-        }
-        .feature-item h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        .feature-icon {
-            font-size: 3em;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
-        .pricing {
-            padding: 100px 0;
-        }
-        .pricing h2 {
-            text-align: center;
-            margin-bottom: 60px;
-            font-size: 2.5em;
-        }
-        .pricing-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 40px;
-        }
-        .pricing-item {
-            background-color: #fff;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-            text-align: center;
-            transition: transform 0.3s;
-        }
-        .pricing-item:hover {
-            transform: scale(1.05);
-        }
-        .pricing-item h3 {
-            margin-top: 0;
-            color: var(--primary-color);
-        }
-        .price {
-            font-size: 2.5em;
-            font-weight: bold;
-            margin: 20px 0;
-            color: var(--accent-color);
-        }
-        .pricing-features {
-            list-style-type: none;
-            padding: 0;
-            margin-bottom: 30px;
-        }
-        .pricing-features li {
-            margin-bottom: 10px;
-        }
-        footer {
-            background-color: var(--secondary-color);
-            color: #fff;
-            text-align: center;
-            padding: 40px 0;
-        }
-        .social-links {
-            margin-top: 20px;
-        }
-        .social-links a {
-            color: #fff;
-            font-size: 1.5em;
-            margin: 0 10px;
-            transition: color 0.3s;
-        }
-        .social-links a:hover {
-            color: var(--primary-color);
-        }
-        @keyframes fadeInUp {
-            from {
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>NoCode Startup SaaS - Build Your SaaS Without Code</title>
+        <link
+            href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap"
+            rel="stylesheet"
+        />
+        <style>
+            :root {
+                --primary-color: #3498db;
+                --secondary-color: #2c3e50;
+                --accent-color: #e74c3c;
+                --text-color: #333;
+                --light-bg: #f9f9f9;
+            }
+            body {
+                font-family: 'Roboto', sans-serif;
+                margin: 0;
+                padding: 0;
+                color: var(--text-color);
+                line-height: 1.6;
+            }
+            .container {
+                max-width: 1200px;
+                margin: 0 auto;
+                padding: 0 20px;
+            }
+            header {
+                background-color: var(--secondary-color);
+                color: #fff;
+                padding: 20px 0;
+                position: fixed;
+                width: 100%;
+                z-index: 1000;
+            }
+            nav {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            nav ul {
+                list-style-type: none;
+                display: flex;
+            }
+            nav ul li {
+                margin-left: 20px;
+            }
+            nav ul li a {
+                color: #fff;
+                text-decoration: none;
+                transition: color 0.3s;
+            }
+            nav ul li a:hover {
+                color: var(--primary-color);
+            }
+            .hero {
+                background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+                color: #fff;
+                text-align: center;
+                padding: 150px 0 100px;
+            }
+            .hero h1 {
+                font-size: 3.5em;
+                margin-bottom: 20px;
+                animation: fadeInUp 1s ease-out;
+            }
+            .hero p {
+                font-size: 1.2em;
+                max-width: 600px;
+                margin: 0 auto 30px;
+                animation: fadeInUp 1s ease-out 0.5s;
                 opacity: 0;
-                transform: translateY(20px);
+                animation-fill-mode: forwards;
             }
-            to {
-                opacity: 1;
-                transform: translateY(0);
+            .cta-button {
+                display: inline-block;
+                background-color: var(--accent-color);
+                color: #fff;
+                padding: 15px 40px;
+                text-decoration: none;
+                border-radius: 50px;
+                font-weight: bold;
+                transition: all 0.3s;
+                animation: fadeInUp 1s ease-out 1s;
+                opacity: 0;
+                animation-fill-mode: forwards;
             }
-        }
-    </style>
-    <script src="https://kit.fontawesome.com/your-fontawesome-kit.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <header>
-        <div class="container">
-            <nav>
-                <h1>NoCode Startup SaaS</h1>
-                <ul>
-                    <li><a href="#features">Features</a></li>
-                    <li><a href="#pricing">Pricing</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-            </nav>
-        </div>
-    </header>
-
-    <section class="hero">
-        <div class="container">
-            <h1>Build Your SaaS Without Code</h1>
-            <p>Launch your startup faster with our no-code solution. Create, customize, and deploy your SaaS application without writing a single line of code.</p>
-            <a href="#" class="cta-button">Start Building Now</a>
-        </div>
-    </section>
-
-    <section id="features" class="features">
-        <div class="container">
-            <h2>Powerful Features</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <i class="fas fa-magic feature-icon"></i>
-                    <h3>Drag-and-Drop Interface</h3>
-                    <p>Build user interfaces effortlessly with our intuitive drag-and-drop editor.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-puzzle-piece feature-icon"></i>
-                    <h3>Pre-built Templates</h3>
-                    <p>Choose from a variety of templates for common SaaS functionalities to jumpstart your project.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-database feature-icon"></i>
-                    <h3>Database Integration</h3>
-                    <p>Easily manage and integrate databases without any coding knowledge.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-robot feature-icon"></i>
-                    <h3>AI-Powered</h3>
-                    <p>Leverage AI connectors for Claude, Gemini, and OpenAI to enhance your application.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-rocket feature-icon"></i>
-                    <h3>Automated Deployment</h3>
-                    <p>Deploy your SaaS application with a single click and scale effortlessly.</p>
-                </div>
-                <div class="feature-item">
-                    <i class="fas fa-code feature-icon"></i>
-                    <h3>Code Ejection</h3>
-                    <p>Export your project's code and continue development on your own platform when needed.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="pricing" class="pricing">
-        <div class="container">
-            <h2>Simple, Transparent Pricing</h2>
-            <div class="pricing-grid">
-                <div class="pricing-item">
-                    <h3>Startup Plan</h3>
-                    <div class="price">$9.99/month</div>
-                    <ul class="pricing-features">
-                        <li>Unlimited Projects</li>
-                        <li>Automated Deployment</li>
-                        <li>Custom Branding</li>
-                        <li>Database Management</li>
-                        <li>AI Integration</li>
-                        <li>24/7 Support</li>
+            .cta-button:hover {
+                background-color: #c0392b;
+                transform: translateY(-3px);
+                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+            }
+            .features {
+                padding: 100px 0;
+                background-color: var(--light-bg);
+            }
+            .features h2 {
+                text-align: center;
+                margin-bottom: 60px;
+                font-size: 2.5em;
+            }
+            .feature-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+                gap: 40px;
+            }
+            .feature-item {
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                transition: transform 0.3s;
+            }
+            .feature-item:hover {
+                transform: translateY(-10px);
+            }
+            .feature-item h3 {
+                margin-top: 0;
+                color: var(--primary-color);
+            }
+            .feature-icon {
+                font-size: 3em;
+                margin-bottom: 20px;
+                color: var(--primary-color);
+            }
+            .pricing {
+                padding: 100px 0;
+            }
+            .pricing h2 {
+                text-align: center;
+                margin-bottom: 60px;
+                font-size: 2.5em;
+            }
+            .pricing-grid {
+                display: grid;
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+                gap: 40px;
+            }
+            .pricing-item {
+                background-color: #fff;
+                padding: 40px;
+                border-radius: 10px;
+                box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+                text-align: center;
+                transition: transform 0.3s;
+            }
+            .pricing-item:hover {
+                transform: scale(1.05);
+            }
+            .pricing-item h3 {
+                margin-top: 0;
+                color: var(--primary-color);
+            }
+            .price {
+                font-size: 2.5em;
+                font-weight: bold;
+                margin: 20px 0;
+                color: var(--accent-color);
+            }
+            .pricing-features {
+                list-style-type: none;
+                padding: 0;
+                margin-bottom: 30px;
+            }
+            .pricing-features li {
+                margin-bottom: 10px;
+            }
+            footer {
+                background-color: var(--secondary-color);
+                color: #fff;
+                text-align: center;
+                padding: 40px 0;
+            }
+            .social-links {
+                margin-top: 20px;
+            }
+            .social-links a {
+                color: #fff;
+                font-size: 1.5em;
+                margin: 0 10px;
+                transition: color 0.3s;
+            }
+            .social-links a:hover {
+                color: var(--primary-color);
+            }
+            @keyframes fadeInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(20px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        </style>
+        <script
+            src="https://kit.fontawesome.com/your-fontawesome-kit.js"
+            crossorigin="anonymous"
+        ></script>
+    </head>
+    <body>
+        <header>
+            <div class="container">
+                <nav>
+                    <h1>NoCode Startup SaaS</h1>
+                    <ul>
+                        <li><a href="#features">Features</a></li>
+                        <li><a href="#pricing">Pricing</a></li>
+                        <li><a href="#contact">Contact</a></li>
                     </ul>
-                    <a href="#" class="cta-button">Choose Plan</a>
+                </nav>
+            </div>
+        </header>
+
+        <section class="hero">
+            <div class="container">
+                <h1>Build Your SaaS Without Code</h1>
+                <p>
+                    Launch your startup faster with our no-code solution. Create, customize, and
+                    deploy your SaaS application without writing a single line of code.
+                </p>
+                <a href="#" class="cta-button">Start Building Now</a>
+            </div>
+        </section>
+
+        <section id="features" class="features">
+            <div class="container">
+                <h2>Powerful Features</h2>
+                <div class="feature-grid">
+                    <div class="feature-item">
+                        <i class="fas fa-magic feature-icon"></i>
+                        <h3>Drag-and-Drop Interface</h3>
+                        <p>
+                            Build user interfaces effortlessly with our intuitive drag-and-drop
+                            editor.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-puzzle-piece feature-icon"></i>
+                        <h3>Pre-built Templates</h3>
+                        <p>
+                            Choose from a variety of templates for common SaaS functionalities to
+                            jumpstart your project.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-database feature-icon"></i>
+                        <h3>Database Integration</h3>
+                        <p>Easily manage and integrate databases without any coding knowledge.</p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-robot feature-icon"></i>
+                        <h3>AI-Powered</h3>
+                        <p>
+                            Leverage AI connectors for Claude, Gemini, and OpenAI to enhance your
+                            application.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-rocket feature-icon"></i>
+                        <h3>Automated Deployment</h3>
+                        <p>
+                            Deploy your SaaS application with a single click and scale effortlessly.
+                        </p>
+                    </div>
+                    <div class="feature-item">
+                        <i class="fas fa-code feature-icon"></i>
+                        <h3>Code Ejection</h3>
+                        <p>
+                            Export your project's code and continue development on your own platform
+                            when needed.
+                        </p>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <footer id="contact">
-        <div class="container">
-            <h3>Get in Touch</h3>
-            <p>Email: support@nocodestartupsaas.com</p>
-            <p>Phone: +1 (555) 123-4567</p>
-            <div class="social-links">
-                <a href="#"><i class="fab fa-twitter"></i></a>
-                <a href="#"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+        <section id="pricing" class="pricing">
+            <div class="container">
+                <h2>Simple, Transparent Pricing</h2>
+                <div class="pricing-grid">
+                    <div class="pricing-item">
+                        <h3>Startup Plan</h3>
+                        <div class="price">$9.99/month</div>
+                        <ul class="pricing-features">
+                            <li>Unlimited Projects</li>
+                            <li>Automated Deployment</li>
+                            <li>Custom Branding</li>
+                            <li>Database Management</li>
+                            <li>AI Integration</li>
+                            <li>24/7 Support</li>
+                        </ul>
+                        <a href="#" class="cta-button">Choose Plan</a>
+                    </div>
+                </div>
             </div>
-            <p>&copy; 2024 MaxSoft. All rights reserved.</p>
-        </div>
-    </footer>
-</body>
+        </section>
+
+        <footer id="contact">
+            <div class="container">
+                <h3>Get in Touch</h3>
+                <p>Email: support@nocodestartupsaas.com</p>
+                <p>Phone: +1 (555) 123-4567</p>
+                <div class="social-links">
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-facebook"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <p>&copy; 2024 MaxSoft. All rights reserved.</p>
+            </div>
+        </footer>
+    </body>
 </html>

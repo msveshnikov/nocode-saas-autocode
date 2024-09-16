@@ -1,33 +1,33 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
-import { ThemeProvider, createTheme } from "@mui/material/styles";
-import CssBaseline from "@mui/material/CssBaseline";
-import { AuthProvider } from "./contexts/AuthContext";
-import { DndProvider } from "react-dnd";
-import { HTML5Backend } from "react-dnd-html5-backend";
+import React from 'react';
+import ReactDOM from 'react-dom/client';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+import CssBaseline from '@mui/material/CssBaseline';
+import { AuthProvider } from './contexts/AuthContext';
+import { DndProvider } from 'react-dnd';
+import { HTML5Backend } from 'react-dnd-html5-backend';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Home from "./pages/Home";
-import Builder from "./pages/Builder";
-import Templates from "./pages/Templates";
-import Database from "./pages/Database";
-import ApiIntegration from "./pages/ApiIntegration";
-import Settings from "./pages/Settings";
-import Login from "./pages/Login";
-import Register from "./pages/Register";
+import Header from './components/Header';
+import Footer from './components/Footer';
+import Home from './pages/Home';
+import Builder from './pages/Builder';
+import Templates from './pages/Templates';
+import Database from './pages/Database';
+import ApiIntegration from './pages/ApiIntegration';
+import Settings from './pages/Settings';
+import Login from './pages/Login';
+import Register from './pages/Register';
 
 const theme = createTheme({
     palette: {
-        mode: "light",
+        mode: 'light',
         primary: {
-            main: "#1976d2",
+            main: '#1976d2'
         },
         secondary: {
-            main: "#dc004e",
-        },
-    },
+            main: '#dc004e'
+        }
+    }
 });
 
 function App() {
@@ -38,16 +38,16 @@ function App() {
                 <AuthProvider>
                     <DndProvider backend={HTML5Backend}>
                         <Header />
-                        <Switch>
-                            <Route exact path="/" component={Home} />
-                            <Route path="/builder" component={Builder} />
-                            <Route path="/templates" component={Templates} />
-                            <Route path="/database" component={Database} />
-                            <Route path="/api-integration" component={ApiIntegration} />
-                            <Route path="/settings" component={Settings} />
-                            <Route path="/login" component={Login} />
-                            <Route path="/register" component={Register} />
-                        </Switch>
+                        <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/builder" element={<Builder />} />
+                            <Route path="/templates" element={<Templates />} />
+                            <Route path="/database" element={<Database />} />
+                            <Route path="/api-integration" element={<ApiIntegration />} />
+                            <Route path="/settings" element={<Settings />} />
+                            <Route path="/login" element={<Login />} />
+                            <Route path="/register" element={<Register />} />
+                        </Routes>
                         <Footer />
                     </DndProvider>
                 </AuthProvider>
@@ -56,4 +56,9 @@ function App() {
     );
 }
 
-ReactDOM.render(<App />, document.getElementById("root"));
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>
+);
