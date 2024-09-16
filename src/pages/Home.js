@@ -7,23 +7,23 @@ const Home = () => {
         {
             title: 'Drag-and-Drop Interface',
             description: 'Build user interfaces easily with our intuitive drag-and-drop builder.',
-            image: '/images/drag-drop.jpg'
+            image: 'https://images.unsplash.com/photo-1600132806370-bf17e65e942f?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Pre-built Templates',
             description: 'Get started quickly with our library of pre-built SaaS templates.',
-            image: '/images/templates.jpg'
+            image: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'Database Integration',
             description: 'Seamlessly integrate and manage your database without coding.',
-            image: '/images/database.jpg'
+            image: 'https://images.unsplash.com/photo-1544383835-bda2bc66a55d?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
         },
         {
             title: 'AI-Powered',
             description:
                 'Leverage AI with Claude, Gemini, and OpenAI connectors for smart features.',
-            image: '/images/ai.jpg'
+            image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80'
         }
     ];
 
